@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdowns</title>
+    <style>
+        select {
+            width: 150px;
+            color: white;
+            background-color: red;
+            padding: 5px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border-color: blue;
+           
+            
+        }
+        dt{
+            color: white;
+            text-shadow: 5px 5px 5px red;
+            margin-top: 30px;
+            margin-left: 30px;
+            margin-bottom: 5px;
+            background-color: bl;
+            width: 120px;
+           
+        }
+        dl{
+            border: 5px;
+            border-radius: 5px;
+            border-style: solid;
+            border-color: blue;
+            width: 260px;
+            height: 330px;
+            margin-left: 430px;
+            background-color:black;
+            box-shadow: 5px 5px 5px  red;
+        }
+    </style>
+    <script>
+         
+         var categories = ["Select Category", "Electronics", "Footwear"];
+         var electronics = ["Select Electronics", "Televisions", "Mobiles"];
+         var footwear = ["Select Footwear", "Casuals", "Boots", "Sneakers"];
+         var televisions = ["Select telivisions", "Reamle TV", "Oneplus Tv", "Sony Tv"];
+         var mobiles = ["Select mobiles", "Realme mobile", "Oppo mobile", "Oneplus mobile"];
+         var products = [];
+
+         
+        
+        function LoadProducts(){
+            document.getElementById("lstProducts").innerHTML = "";
+           products.map(function(product){
+                var option = document.createElement("option");
+                option.text = product;
+                option.value = product;
+                document.getElementById("lstProducts").appendChild(option);
+        });
+    }
+            
+        function LoadCategories(){
+            categories.map(function(category){
+                var option = document.createElement("option");
+                option.text = category;
+                option.value = category;
+                document.getElementById("lstCategories").appendChild(option);
+            });
+        }
+        function LoadTVs(){
+            document.getElementById("lsttv").innerHTML = "";
+            televisions.map(function(tv){
+                var option = document.createElement("option");
+                option.text = tv;
+                option.value = tv;
+                document.getElementById("lsttv").appendChild(option);
+            });
+        }
+
+        function LoadMobiles(){
+            document.getElementById("lsttv").innerHTML = "";
+            mobiles.map(function(mobile){
+                var option = document.createElement("option");
+                option.text = mobile;
+                option.value = mobile;
+                document.getElementById("lsttv").appendChild(option);
+            });
+        }
+
+        function bodyload(){
+            LoadCategories();
+        }
+
+        function CategoryChanged(){
+            var categoryName = document.getElementById("lstCategories").value;
+            switch(categoryName)
+            {
+                case "Electronics":
+                products = electronics;
+                LoadProducts();
+                break;
+                case "Footwear":
+                products = footwear;
+                LoadProducts();
+                break;
+                default:
+                products = ["Please Select Category"];
+                LoadProducts();
+                break;
+            }
+        }
+        function ProductChanged(){
+            var productName = document.getElementById("lstProducts").value;
+            if (productName === "Televisions") {
+                LoadTVs();
+            } else if (productName === "Mobiles") {
+                LoadMobiles();
+            } else {
+                document.getElementById("lsttv").innerHTML = "";
+            }
+        }
+
+    </script>
+</head>
+<body onload="bodyload()">
+    <h2 style="font-weight: bold; font-family: Arial; color: lavenderblush;background-color: black;border: 5px; border-style: solid; border-radius: 10px; border-color: blue; width: 450px; padding: 10px; box-shadow: 5px 5px 5px red; text-shadow: 5px 5px 5px blue; margin-left: 325px;">Cascading Dropdowns Using Switch</h2>
+    <dl>
+        <dt>Select Category</dt>
+        <dd>
+            <select id="lstCategories"  onchange="CategoryChanged()"></select>
+        </dd>
+        <dt>Select Product</dt>
+        <dd>
+            <select id="lstProducts" onchange="ProductChanged()" ></select>
+        </dd>
+        <dt>Select Item</dt>
+        <dd>
+            <select id="lsttv" ></select>
+        </dd>
+       
+    </dl>
+</body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOTEL BOOKING</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        function OrderClick(){
+            document.getElementById("lblCustomer").innerHTML = document.getElementById("txtCustomer").value;
+            document.getElementById("lblMobile").innerHTML = document.getElementById("txtdate").value;
+            document.getElementById("lbldays").innerHTML = document.getElementById("txtday").value;
+            document.getElementById("lblpersons").innerHTML = document.getElementById("txtperson").value;
+            document.getElementById("lbladvance").innerHTML = document.getElementById("Advanceamount").value;
+
+            var roomName = "";
+            var roomCost = 0;
+
+            var room1 = document.getElementById("room1");
+            var room2 = document.getElementById("room2");
+            var roomday = parseInt(document.getElementById("txtday").value);
+            var total = roomCost * roomday;
+            var Advanceamount=parseInt(document.getElementById("Advanceamount").value)
+            var totals = total - Advanceamount;
+            if(room1.checked) {
+                roomName = room1.value;
+                roomCost = 2500;
+                imgroom.src = "images/deluxe room.png";
+                total = roomCost * roomday;
+                totals = total - Advanceamount;
+                  
+            }
+
+            if(room2.checked) {
+                roomName = room2.value;
+                roomCost = 4000;
+                imgroom.src = "images/suite room.png";
+                total = roomCost * roomday;
+                totals = total - Advanceamount;
+   
+            }
+
+            var adonName = "";
+            var adonCost = 0;
+
+            var Acc = document.getElementById("Acc");
+            var lock = document.getElementById("lock");
+
+            if(Acc.checked){
+                adonName += Acc.value + "<br>";
+                adonCost = 1000;
+                roomCost += adonCost;
+                total = roomCost * roomday;
+                totals = total - Advanceamount;
+                
+                
+                
+              
+                
+            }
+
+            if(lock.checked) {
+                adonName += lock.value + "<br>";
+                adonCost = 300;
+                roomCost += adonCost;
+                total = roomCost * roomday;
+                totals = total - Advanceamount;
+                
+            }
+            
+            
+
+
+            document.getElementById("roomtype").innerHTML = roomName;
+            document.getElementById("lblamen").innerHTML = adonName;
+            document.getElementById("lblamount").innerHTML = `&#8377; ${totals}`;
+
+        }
+    </script>
+</head>
+<body class="container-fluid">
+    <img src="images/hhhh.png" style="margin-left: 400px;">
+    <header>
+       <h2 style="border: 2; background-color: aqua; font-weight: bold; padding: 10px; text-align: center; color: tomato;">Hotel Registration Form</h2>
+    </header>
+    <section>
+        <div class="accordion" id="kfc">
+            <!-- Customer Category -->
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <button data-bs-target="#customer" data-bs-toggle="collapse" class="btn btn-success w-100">Customer Info</button>
+                </div>
+                <div class="accordion-collapse collapse" id="customer" data-bs-parent="#kfc">
+                  <div class="accordion-body bg-warning text-dark mt-2">
+                     <dl>
+                        <dt>Customer Name</dt>
+                        <dd><input type="text" id="txtCustomer" class="form-control"></dd>
+                        <dt>Check in date</dt>
+                        <dd><input type="date" id="txtdate" class="form-control"></dd>
+                        <dt>Total No Of Days</dt>
+                        <dd><input type="number" id="txtday" class="form-control"></dd>
+                        <dt>Total No Of Persons</dt>
+                        <dd><input type="number" id="txtperson" class="form-control"></dd>
+                     </dl>
+                  </div>
+                </div>
+            </div>
+
+            <!-- Meals Category -->
+
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <button data-bs-target="#room" data-bs-toggle="collapse" class="btn btn-success w-100">Select Room Type</button>
+                </div>
+                <div class="accordion-collapse collapse" id="room" data-bs-parent="#kfc">
+                    <div class="accordion-body">
+                        <div class="row text-center">
+                            <div class="col">
+                                <img src="images/deluxe room.png" width="50%" height="200">
+                                <div>
+                                    <div class="h3">Deluxe Room </div>
+                                    <input type="radio" id="room1" value="deluxe room" name="room" class="form-check-input"> <label class="form-check-label fw-bold"> &#8377; 2500/-</label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <img src="images/suite room.png" width="50%" height="200">
+                                <div>
+                                    <div class="h3">Suite Room  </div>
+                                    <input type="radio" id="room2" value="suite room" name="room" class="form-check-input"> <label class="form-check-label fw-bold"> &#8377; 4000/-</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AD-On's Category -->
+
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <button data-bs-target="#adon" data-bs-toggle="collapse" class="btn btn-success w-100">Select Amenities</button>
+                </div>
+                <div class="accordion-collapse collapse" id="adon" data-bs-parent="#kfc">
+                    <div class="accordion-body">
+                        <div class="row text-center">
+                            <div class="col">
+                                <img src="images/Ac.png" width="50%" height="200">
+                                <div>
+                                    <div class="h3">A/C</div>
+                                    <input type="checkbox" id="Acc" value="Ac room"  class="form-check-input"> <label class="form-check-label fw-bold"> &#8377; 1000/-</label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <img src="images/locker.png" width="50%" height="200">
+                                <div>
+                                    <div class="h3">Locker</div>
+                                    <input type="checkbox" id="lock" value="locker" class="form-check-input"> <label class="form-check-label fw-bold"> &#8377; 300/-</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <button data-bs-target="#Advance" data-bs-toggle="collapse" class="btn btn-success w-100">Advance Amount</button>
+                </div>
+                <div class="accordion-collapse collapse" id="Advance" data-bs-parent="#kfc">
+                  <div class="accordion-body bg-warning text-dark mt-2">
+                     <dl>
+                        <dt>Advance Amount</dt>
+                        <dd><input type="number" id="Advanceamount" class="form-control" required></dd>
+                     </dl>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <button onclick="OrderClick()" data-bs-target="#summary" data-bs-toggle="modal" class="btn btn-warning" style="margin-top: 10px; margin-left: 680px; color: black; font-weight: bold;">Register</button>
+        <div class="modal fade" id="summary">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>Total Bill Summary</h3>
+                        <button class="btn btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col">
+                                <dl>
+                                    <dt>Customer Name</dt>
+                                    <dd id="lblCustomer"></dd>
+                                    <dt>Check in Date</dt>
+                                    <dd id="lblMobile"></dd>
+                                    <dt>Total No Of Days</dt>
+                                    <dd id="lbldays"></dd>
+                                    <dt>Total No Of Persons</dt>
+                                    <dd id="lblpersons"></dd>
+                                    <dt>Room Type</dt>
+                                    <dd id="roomtype"></dd>
+                                    <dt>Amenities</dt>
+                                    <dd id="lblamen"></dd>
+                                    <dt>Advance Amount</dt>
+                                    <dd id="lbladvance"></dd>
+                                    <dt>Balance Amount</dt>
+                                    <dd id="lblamount"></dd>
+                                </dl>
+                            </div>
+                            <div class="col">
+                                <img id="imgroom" width="100%" height="200">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+</body>
+</html>

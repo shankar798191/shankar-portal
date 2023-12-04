@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function SetColor(color){
+            var shoe = document.getElementById("imgShoe");
+            switch(color){
+                case 'red':
+                shoe.src="images/reddd.jpg";
+                break;
+                case 'green':
+                shoe.src="images/green.jpg";
+                break;
+                case 'blue':
+                shoe.src="images/bl.jpg";
+                break;
+                case 'black':
+                shoe.src="images/blac.jpg";
+                break;
+                case 'yellow':
+                shoe.src="images/yel.jpg";
+                break;
+            }
+        }
+    </script>
+</head>
+<body>
+   <div style="margin-left: 400px; margin-top: 150px;">
+     <img width="270" id="imgShoe" src="images/reddd.jpg" height="200" border="1">
+     <div>
+        <button onmouseover="SetColor('red')" style="background-color: red; border:none; padding: 10px; color:white">Red</button>
+        <button onmouseover="SetColor('green')" style="background-color: green; border:none; padding: 10px; color:white">Green</button>
+        <button onmouseover="SetColor('blue')" style="background-color: blue; border:none; padding: 10px; color:white">Blue</button>
+        <button onmouseover="SetColor('black')" style="background-color: black; border:none; padding: 10px; color:white">Black</button>
+        <button onmouseover="SetColor('yellow')" style="background-color: yellow; border:none; padding: 10px; color:white">yellow</button>
+     </div>
+   </div>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var products = [
+          { "Id": 1, "Name": "TV", "Price":24000.44, "Stock":true },
+          { "Id": 2, "Name": "Mobile", "Price":12000.33, "Stock":false },
+          { "Id": 3, "Name": "Watch", "Price": 4000.21, "Stock":true}
+        ];
+
+        function LoadProducts(){
+            document.querySelector("tbody").innerHTML = "";
+            products.map(function(product){
+                var tr = document.createElement("tr");
+                var tdId = document.createElement("td");
+                var tdName = document.createElement("td");
+                var tdPrice = document.createElement("td");
+                var tdStock = document.createElement("td");
+
+                tdId.innerHTML = product.Id;
+                tdName.innerHTML = product.Name;
+                tdPrice.innerHTML = product.Price;
+                tdStock.innerHTML = product.Stock;
+
+                tr.appendChild(tdId);
+                tr.appendChild(tdName);
+                tr.appendChild(tdPrice);
+                tr.appendChild(tdStock);
+
+                document.querySelector("tbody").appendChild(tr);
+            })
+        }
+
+        function bodyload(){
+            LoadProducts();
+        }
+        function AddClick(){
+            var product = {"Id":0, "Name":"", "Price":0, "Stock":false};
+            product.Id = parseInt(document.getElementById("txtId").value);
+            product.Name = document.getElementById("txtName").value;
+            product.Price = parseFloat(document.getElementById("txtPrice").value);
+
+            var stockCheckBox = document.getElementById("chkStock");
+            var inStock = false;
+            if(stockCheckBox.checked){
+                inStock = true;
+            } else {
+                inStock = false;
+            }
+
+            product.Stock = inStock;
+
+            products.push(product);
+            alert(`Product Added Successfully..`);
+            LoadProducts();
+
+            document.getElementById("txtId").value = "";
+            document.getElementById("txtName").value = "";
+            document.getElementById("txtPrice").value = "";
+            document.getElementById("chkStock").checked = false;
+
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <fieldset>
+        <legend>Add New Product</legend>
+        <dl>
+            <dt>Product Id</dt>
+            <dd><input type="number" id="txtId"></dd>
+            <dt>Name</dt>
+            <dd><input type="text" id="txtName"></dd>
+            <dt>Price</dt>
+            <dd><input type="number" id="txtPrice"></dd>
+            <dt>Stock</dt>
+            <dd><input type="checkbox" id="chkStock"> <label>Available</label> </dd>
+        </dl>
+        <button onclick="AddClick()">Add Product</button>
+    </fieldset>
+    <br><br>
+    <table width="100%" border="1">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Stock</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+</body>
+</html>

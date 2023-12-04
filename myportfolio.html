@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<style>
+    @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 45%;
+            }
+        }
+
+        .typing-text {
+            overflow: hidden; 
+            border-right: 1px solid black; 
+            white-space: nowrap;
+            animation: typing 2s steps(20) infinite;
+            animation-direction:alternate; 
+           
+        }
+        .waviy {
+  position: relative;
+}
+.waviy span {
+  position: relative;
+  display: inline-block;
+  font-size: 30px;
+  color: black;
+  font-family:Gill Sans ;
+  text-shadow: 1px 1px 1px white;
+  text-transform: uppercase;
+  animation: flip 1s infinite;
+  animation-delay: calc(.1s * var(--i))
+}
+@keyframes flip {
+  0%,80% {
+    transform: rotateY(360deg) 
+  }
+}
+       
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+  
+}
+
+.dropdown-menu {
+    display: none;
+    
+    position: absolute;
+    background-color: dodgerblue;
+    color: white;
+    min-width: 110px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;   
+ 
+}
+
+
+.dropdown-menu li {
+    list-style: none; /* Remove default list styling */
+}
+
+.dropdown-menu li:hover {
+    background-color: black; /* Background color on hover */
+    color: white; /* Text color on hover */
+}
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+.bounce img {
+    animation: bounce 1s infinite;
+    animation-delay: calc(0.1s * var(--i));
+}
+button:hover {
+        background-color: black !important; 
+        color: #fff; 
+        padding: 10px;
+        border-radius: 20px;
+    }
+
+
+    a {
+  color: white;
+  text-decoration: none;
+}
+
+.social {
+  position: absolute;
+  top: 430px;
+}
+.social ul {
+  padding: 0px;
+  transform: translate(-270px, 0);
+}
+.social ul li {
+  display: block;
+  margin: 20px;
+  background:white;
+  width: 300px;
+  text-align: right;
+  padding: 0px;
+  border-radius: 0 30px 30px 0;
+  transition: all 1s;
+}
+.social ul li:hover {
+  transform: translate(110px, 0);
+  background-color: deepskyblue;
+  
+}
+.social ul li:hover a {
+  color: white;
+}
+.social ul li:hover i {
+  color: #fff;
+  background: blue;
+  transform: rotate(360deg);
+  transition: all 1s;
+}
+.social ul li i {
+  margin-left: 10px;
+  color: blue;
+  background: white;
+  padding: 20px;
+  border-radius: 50%;
+  font-size: 25px;
+  transform: rotate(0deg);
+}
+
+
+footer {
+            background-color: dodgerblue;
+            color:white;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 4fr 4fr  4fr;
+            font-family: Arial;
+        }
+        .footer-title {
+            font-size: 20px;
+            font-weight: bold;
+            
+        }
+        footer span {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .back {
+            background-color: black;
+            color:white;
+            padding: 10px;
+            text-align: center;
+            font-family: Arial;
+            font-size: 20px;
+        }
+        .back:hover{
+            background-color: tomato;
+            color: #fff;
+        }
+        a{
+            text-decoration: none;
+            color: aliceblue;
+        }
+        .bi-facebook:hover{
+    color: azure !important;
+    background-color: blue;
+    transform: rotateY(360deg);
+    transition: 1s;
+    border-radius: 50%;
+   }
+   .bi-instagram:hover{
+    color: azure !important;
+    background-color: orangered;
+    transform: rotateY(360deg);
+    transition: 1s;
+    border-radius: 50%;
+   }
+   .bi-linkedin:hover{
+    color: azure !important;
+    background-color: blue;
+    transform: rotateY(360deg);
+    transition: 2s;
+    border-radius: 50%;
+   }
+   .bi-twitter:hover{
+    color: white !important;
+    background-color: blue;
+    transform: rotateY(360deg);
+    transition: 2s;
+    border-radius: 50%;
+   }
+</style>
+</head>
+<body onload="bodyload()">
+   
+   
+    <span style="display: inline-flex; margin-left: 600px; color: black; height: 35px; " id="up">
+        <p id="ss" style="font-family: Brush script; font-weight: bold; font-size: 25px;"></p>
+        <h3 id="clock" style="margin-left: 450px;"></h3>
+      </span>
+      
+    <header style="font-family: 'Brush script'; font-weight: bold; width: 100vw; display: flex; justify-content: space-evenly; align-items: center; height: 60px; background-color: dodgerblue; color: white; padding: 10px; font-size: 20px;" >
+        <span class="bi bi-person-circle" style="font-family: 'Brush script'; font-style: italic; font-weight: bold; margin-left: -120px; font-size: 25px;"> Shankar</span>
+        <span ><a href="#top"><button class="bi bi-chat-square-text" style="border: none;background-color: dodgerblue; color: #fff; font-weight: bold;">About </button></a> </span>
+       <span ><a href="resume.html" target="_blank"><button class="bi bi-file-earmark-text" style="border: none;background-color: dodgerblue; color: #fff; font-weight: bold;"> My Resume</button></a> </span>
+       <span ><a href="#project"><button class="bi bi-journal-code" style="border: none;background-color: dodgerblue; color: #fff; font-weight: bold;"> My Projects</button></a> </span>
+        <span> <button class="bi bi-gear dropdown" style="background-color: dodgerblue; border: none; color: #fff; font-weight: bold;"> Skills
+            <ul class="dropdown-menu" style="text-align: center;">
+                <li>HTML-5</li>
+                <li>CSS-3</li>
+                <li>BOOTSTRAP-4</li>
+                <li>JAVASCRIPT/ES6</li>
+                <li>AJAX</li>
+                <li>JSON</li>
+                <li>SASS</li>
+                <li>JQUERY</li>
+                <li>JQUERY UI</li>
+                <li>JQUERY AJAX</li>
+                <li>MONGO DB </li>
+                <li> NODE JS</li>
+                <li> EXPRESS JS</li>
+            </ul>
+            </button>
+        </span>
+        </span>
+        <span><a href="#tod"><button class="bi bi-telephone" style="background-color: dodgerblue; border: none; color: #fff; font-weight: bold;"> Contact Info</button></a></span>
+    </header>
+    <div style="width: 100vw;">
+        <span><img src="images/mobile-application-digital-marketing.gif" style="height: 330px;"</span>
+     <span><img src="images/bg.gif" style="height: 350px; width: 650px;"></span>
+     <span><img src="images/web-solutions-gif.gif" style="height: 300px;"</span>
+    </div>
+    <nav class="social">
+      <ul>
+            <li><a href="https://x.com/vsbshankar?t=hBeEJWiF2tc5Q5zfp81umw&s=09">Twitter <i class="fa fa-twitter"></i></a></li>
+          <li><a href="https://www.facebook.com/veeramallu.shankar?mibextid=ZbWKwL">Facebook <i class="fa fa-facebook"></i></a></li>
+          <li><a href="https://www.linkedin.com/in/veeramallu-shankar-7136b4244?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">Linkedin <i class="fa fa-linkedin"></i></a></li>
+          <li><a href="https://instagram.com/_shankar11_?igshid=OGQ5ZDc2ODk2ZA==">Instagram<i class="fa fa-instagram"></i></a></li>
+            </ul>
+    </nav>
+  
+    <div style="width: 100vw; height: 650px; background-image: url(images/bg\ down\ wave.gif); background-repeat: no-repeat; background-size:1500px;" >
+        <img src="images/IMG20230826235634.jpg" style="height: 300px; width: 300px; border-radius: 450px; align-items: center; margin-left: 630px; margin-top: 20px; box-shadow: 2px 2px 3px 1px aquamarine;">  
+        <div class="waviy" style="margin-left: 650px;  ">
+            <span style="--i:1">v.</span>
+            <span style="--i:2">s.</span>
+            <span style="--i:3">b.</span>
+            <span style="--i:4">s</span>
+            <span style="--i:5">h</span>
+            <span style="--i:6">a</span>
+            <span style="--i:7">n</span>
+            <span style="--i:8">k</span>
+            <span style="--i:8">a</span>
+            <span style="--i:8">r</span>
+            
+           </div>
+        <h3 class="typing-text" style="font-family: Brush script; font-weight: bold; color: red; text-shadow: 1px 1px 1px white; margin-left: 550px;"> Web Developer | UI Full Stack Developer...<h3>
+            <div class="bounce" align="center" style="margin-left: 50px;">
+                <span style="--i:1"><img src="images/pngegg (3).png" height="60px" width="60px"></span>
+                <span style="--i:2"> <img src="images/logo-2582747_640.png" height="65px" width="65px"></span>
+                <span style="--i:3"><img src="images/374972.png" height="70px" width="70px"></span>
+                <span style="--i:4"><img src="images/kisspng-bootstrap-responsive-web-design-web-development-lo-5af676c0755361.6918533815261016964806.png" height="85px" width="85px"></span>
+                <span style="--i:5"><img src="images/kisspng-jquery-computer-icons-port-jquery-icon-shared-by-astrid-1-2565-jmkxyy-5b7604c3aae3f8.6219354015344611237.png" height="50px" width="50px"></span>
+                <span style="--i:6"><img src="images/pngegg (1).png" height="100px" width="100px"></span>
+                <span style="--i:7"><img src="images/pngegg (2).png" height="100px" width="120px"></span>
+                <span style="--i:8"><img src="images/express-js.png" height="50px" width="50px"></span>
+               </div>
+               <div><a href="docs/Shankar ui developer resume.pdf" download="Shankar Resume.pdf"><button class="btn btn-primary" style="padding: 15px; margin-left: 680px; border-radius: 30px;" >Download Resume <span class="bi bi-file-earmark-arrow-down"></span></button></a></div>
+    </div>
+    <div id="top" style="background-image: url(images/bg\ red\ wave.gif); background-repeat: no-repeat; background-position: left; margin-top: 50px;" >
+       <h2 style="float: left; margin-top: 100PX; margin-left: 350PX; background-color: dodgerblue; color: aliceblue; font-family: Brush script; padding: 10px; border-radius: 10px; width: 150px; text-align: center;">About <span class="bi bi-arrow-right-circle"></span></h2>
+        <div style="width: 800px; height: 450px; margin-left: 640px;" align="center" >  
+          <blockquote align="justify" style="font-family: Arial;  line-height: 40px; color: black;">Hi
+                Thank you for showing interest in knowing more about me
+                I’m shankar, As a skilled web developer with strong foundation in designing responsive websites. I possess a good background in HTML, CSS, Javascript,Bootstrap, Jquery, Node.js,  Express.js, Mongodb. I leverage these skills to develop and maintain high-quality web applications that meet clients' needs. 
+                
+                With a passion for staying up-to-date with the latest technologies and trends in the industry, I am always seeking to expand my skill set and take on new challenges. 
+                
+                Whether working independently or as part of a team, I am committed to delivering projects on time and exceeding expectations. Let's connect and discuss how I can help bring your web development goals to fruition.
+                
+                If you're looking for a driven and dedicated professional with a passion for any above-mentioned technologies and a desire to make a difference, look no further. With my skills, knowledge, and commitment, I am ready to help you achieve your goals and succeed in the digital age.</blockquote>
+          </div>
+    </div> 
+    
+    <div class="container-fluid" style="margin-top: 50px; margin-bottom: 50px;" id="project">
+        <h2 style="font-family: Brush script; font-weight: bold; background-color: dodgerblue; color: white; text-align: center; padding: 5px;">My Projects and Samples</h2>
+        <div class="mt-4 d-flex">
+            <div class="card m-2" style="width: 270px; height: 300px;">
+                <img src="images/arrayman.jpg" class="card-img-top" height="170" style="overflow: hidden;">
+                <div class="card-header text-center">
+                    <h4 class="card-title">Array Manipulation</h4>
+                    <p class="card-subtitle">Javascript</p>
+                </div>
+                <div class="card-footer">
+                 <a href="arraymanipulate.html"><button class="btn btn-primary w-100">View</button></a>
+                </div>
+            </div>
+    
+            <div class="card m-2" style="width: 270px; height: 300px;">
+                <img src="images/fk.jpg" class="card-img-top" height="170">
+                <div class="card-header text-center">
+                    <h4 class="card-title">API Project</h4>
+                    <p class="card-subtitle">Javascript & JQUERY</p>
+                </div>
+              
+                <div class="card-footer">
+                  <a href="fakestore.html"> <button class="btn btn-primary w-100">View</button></a>
+                </div>
+            </div>
+            <div class="card m-2" style="width: 270px; height: 300px;">
+                <img src="images/colorchange.jpg" class="card-img-top" height="170">
+                <div class="card-header text-center">
+                    <h4 class="card-title">Mouse Events</h4>
+                    <p class="card-subtitle">Javascript</p>
+                </div>
+                <div class="card-footer">
+                 <a href="mouseevent.html"><button class="btn btn-primary w-100">View</button></a>
+                </div>
+            </div>
+    
+            <div class="card m-2" style="width: 270px; height: 300px;">
+                <img src="images/amzlogin.jpg" class="card-img-top" height="170">
+                <div class="card-header text-center">
+                    <h4 class="card-title">Login Form</h4>
+                    <p class="card-subtitle">Javascript</p>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-primary w-100">View</button>
+                </div>
+            </div>
+    
+            <div class="card m-2" style="width: 270px; height: 300px;">
+                <img src="images/inx.jpg" class="card-img-top" height="170">
+                <div class="card-header text-center">
+                    <h5 class="card-title">Inox Movie Tickets Booking</h5>
+                    <p class="card-subtitle">Javascript</p>
+                </div>
+               
+                <div class="card-footer">
+                  <a href="Inox.html"> <button class="btn btn-primary w-100">View</button></a>
+                </div>
+            </div>
+    
+    
+        </div>
+        <div class="container-fluid">
+            <div class="mt-4 d-flex">
+                <div class="card m-2" style="width: 270px; height: 300px;">
+                    <img src="images/f2.jpg" class="card-img-top" height="170">
+                    <div class="card-header text-center">
+                        <h4 class="card-title">Facebook Login Page</h4>
+                        <p class="card-subtitle">HTML & CSS FORMS</p>
+                    </div>
+                
+                    <div class="card-footer">
+                     <a href="facebook.html"><button class="btn btn-primary w-100">View</button></a>
+                    </div>
+                </div>
+        
+                <div class="card m-2" style="width: 270px; height: 300px;">
+                    <img src="images/sci.jpg" class="card-img-top" height="170">
+                    <div class="card-header text-center">
+                        <h5 class="card-title">Icons Animation On Mouseover</h5>
+                        <p class="card-subtitle">Bootstrap & CSS</p>
+                    </div>
+                   
+                    <div class="card-footer">
+                      <a href="socialicons.html" ><button class="btn btn-primary w-100">View</button></a>
+                    </div>
+                </div>
+                <div class="card m-2" style="width: 270px; height: 300px;">
+                    <img src="images/shoee.jpg" class="card-img-top" height="170">
+                    <div class="card-header text-center">
+                        <h5 class="card-title">Shoe Shopper Web Template</h5>
+                        <p class="card-subtitle">HTML, CSS, BOOTSTRAP</p>
+                    </div>
+                    
+                    <div class="card-footer">
+                       <a href="shoeshop.html" ><button class="btn btn-primary w-100">View</button></a>
+                    </div>
+                </div>
+        
+                <div class="card m-2" style="width: 270px; height: 300px;">
+                    <img src="images/dp.jpg" class="card-img-top" height="170">
+                    <div class="card-header text-center">
+                        <h4 class="card-title">Multiple Dropdowns</h4>
+                        <p class="card-subtitle">Javascript</p>
+                    </div>
+                   
+                    <div class="card-footer">
+                    <a href="dropdown.html" > <button class="btn btn-primary w-100">View</button></a>
+                    </div>
+                </div>
+        
+                <div class="card m-2" style="width: 270px; height: 300px;">
+                    <img src="images/wt.jpg" class="card-img-top" height="170">
+                    <div class="card-header text-center">
+                        <h4 class="card-title">Weather Template</h4>
+                        <p class="card-subtitle">HTML,CSS,BOOTSTRAP</p>
+                    </div>
+                    
+                    <div class="card-footer">
+                       <a href="weather.html"> <button class="btn btn-primary w-100">View</button></a>
+                    </div>
+                </div>
+        
+                <div class="card-body text-warning text-center" style="height: 30px;">
+                   
+                </div>
+            </div>
+        </div>
+    
+    
+    
+        <div class="container-fluid">
+            <div class="mt-4 d-flex">
+                <div class="card m-2" style="width: 270px; height: 300px;">
+                    <img src="images/tr.jpg" class="card-img-top" height="170">
+                    <div class="card-header text-center">
+                        <h4 class="card-title">Travel Web Template</h4>
+                        <p class="card-subtitle">HTML, CSS, BOOTSTRAP</p>
+                    </div>
+                
+                    <div class="card-footer">
+                     <a href="travel.html"><button class="btn btn-primary w-100">View</button></a>
+                    </div>
+                </div>
+        
+                <div class="card m-2" style="width: 270px; height: 300px;">
+                    <img src="images/pl14.jpg" class="card-img-top" height="170">
+                    <div class="card-header text-center">
+                        <h6 class="card-title">Plant Nursery Web Template</h6>
+                        <p class="card-subtitle">HTML, Bootstrap & CSS</p>
+                    </div>
+                   
+                    <div class="card-footer">
+                      <a href="plant.html" ><button class="btn btn-primary w-100">View</button></a>
+                    </div>
+                </div>
+                <div class="card m-2" style="width: 270px; height: 300px;">
+                    <img src="images/hbb.jpg" class="card-img-top" height="170">
+                    <div class="card-header text-center">
+                        <h5 class="card-title">Hotel Booking Form</h5>
+                        <p class="card-subtitle">HTML, CSS, Javascript</p>
+                    </div>
+                    
+                    <div class="card-footer">
+                       <a href="hotel.html" ><button class="btn btn-primary w-100">View</button></a>
+                    </div>
+                </div>
+        
+                <div class="card m-2" style="width: 270px; height: 300px;">
+                    <img src="images/sp.jpg" class="card-img-top" height="170">
+                    <div class="card-header text-center">
+                        <h6 class="card-title">Clothing Shopper Template</h6>
+                        <p class="card-subtitle">HTML, CSS, BOOTSTRAP</p>
+                    </div>
+                   
+                    <div class="card-footer">
+                    <a href="shop.html" > <button class="btn btn-primary w-100">View</button></a>
+                    </div>
+                </div>
+        
+                <div class="card m-2" style="width: 270px; height: 300px;">
+                    <img src="images/bmii.jpg" class="card-img-top" height="170">
+                    <div class="card-header text-center">
+                        <h4 class="card-title">BMI Template</h4>
+                        <p class="card-subtitle">HTML & CSS Forms</p>
+                    </div>
+                    
+                    <div class="card-footer">
+                       <a href="bmiform.html"> <button class="btn btn-primary w-100">View</button></a>
+                    </div>
+                </div>
+        
+                <div class="card-body text-warning text-center" style="height: 30px;">
+                   
+                </div>
+            </div>
+        </div>
+    
+    
+    
+        <div class="container-fluid">
+            <div class="mt-4 d-flex">
+                <div class="card m-2" style="width: 270px; height: 300px;">
+                    <img src="images/vt.jpg" class="card-img-top" height="170">
+                    <div class="card-header text-center">
+                        <h4 class="card-title">Video Library Project</h4>
+                        <p class="card-subtitle">Javascript, NODEJS, EXPRESSJS, MONGODB</p>
+                    </div>
+                
+                    <div class="card-footer">
+                     <a href="https://videotutorial-library-7627f.web.app"><button class="btn btn-primary w-100">View</button></a>
+                    </div>
+                </div>
+        
+                <div class="card m-2" style="width: 270px; height: 300px;">
+                    <img src="images/ng.jpg" class="card-img-top" height="170">
+                    <div class="card-header text-center">
+                        <h5 class="card-title">Netflix Home Page</h5>
+                        <p class="card-subtitle">HTML, CSS, Bootstrap</p>
+                    </div>
+                   
+                    <div class="card-footer">
+                      <a href="netflix.html" ><button class="btn btn-primary w-100">View</button></a>
+                    </div>
+                </div>
+                <div class="card m-2" style="width: 270px; height: 300px;">
+                    <img src="images/yb.jpg" class="card-img-top" height="170">
+                    <div class="card-header text-center">
+                        <h5 class="card-title">Youtube Channel Page</h5>
+                        <p class="card-subtitle">HTML-Iframes</p>
+                    </div>
+                    
+                    <div class="card-footer">
+                       <a href="youtube.html" ><button class="btn btn-primary w-100">View</button></a>
+                    </div>
+                </div>
+        
+                <div class="card m-2" style="width: 270px; height: 300px;">
+                    <img src="images/em.jpg" class="card-img-top" height="170">
+                    <div class="card-header text-center">
+                        <h4 class="card-title">EMI Calculator</h4>
+                        <p class="card-subtitle">Javascript</p>
+                    </div>
+                   
+                    <div class="card-footer">
+                    <a href="emi.html" > <button class="btn btn-primary w-100">View</button></a>
+                    </div>
+                </div>
+        
+                <div class="card m-2" style="width: 270px; height: 300px;">
+                    <img src="images/ld.jpg" class="card-img-top" height="170">
+                    <div class="card-header text-center">
+                        <h6 class="card-title">Changing Dark theme &Light Theme</h6>
+                        <p class="card-subtitle">HTML,CSS,BOOTSTRAP,Javascript</p>
+                    </div>
+                    
+                    <div class="card-footer">
+                       <a href="theme.html"> <button class="btn btn-primary w-100">View</button></a>
+                    </div>
+                </div>
+        
+                <div class="card-body text-warning text-center" style="height: 30px;">
+                   
+                </div>
+            </div>
+        </div>
+    
+    
+        </div>
+
+    </div>
+    <div class="back"><a href="#up"> Back to Top </a></div>
+    <footer>
+        
+        <div>
+            <div class="footer-title">Connect with Me</div>
+          
+                <div style="display: flex; justify-content: space-evenly; margin-top: 30px; margin-right: 170px;">
+                    <div style="width: 50px; height: 50px; background-color: white; box-shadow: 1px 1px 1px 1px whitesmoke; border-radius: 50%; ">
+                        
+                        <a href="https://www.facebook.com/veeramallu.shankar?mibextid=ZbWKwL"> <p class="bi bi-facebook" style="text-align: center; font-size: 35px; color: blue;  border-radius:25px"></p></a></div>
+                    <div style="width: 50px; height: 50px;  background-color: white; box-shadow: 1px 1px 1px 1px whitesmoke; border-radius: 50%;">
+                        <a href="https://instagram.com/_shankar11_?igshid=OGQ5ZDc2ODk2ZA=="><p class="bi bi-instagram" style="text-align: center; font-size: 35px; color: tomato;  border-radius:25px"></p></a></div>
+                    <div style="width: 50px; height: 50px;  background-color: white; border-radius: 50%;">
+                        <a href="https://www.linkedin.com/in/veeramallu-shankar-7136b4244?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><p class="bi bi-linkedin" style="text-align: center; font-size: 32px; color: blue;  border-radius:25px"></p></a></div>
+                     <div style="width: 50px; height: 49px; background-color: aliceblue;   border-radius: 50%;">
+                        <a href="https://x.com/vsbshankar?t=hBeEJWiF2tc5Q5zfp81umw&s=09"> <p class="bi bi-twitter" style="text-align: center; font-size: 34px; color: blue;  border-radius:25px ;"></p></a></div>
+                    </div>
+           
+           
+        </div>
+        <div>
+            <div class="footer-title">Address</div>
+         <span class="bi bi-geo-alt"> Hyderabad, Telangana, India</span>
+            <span>KPHB Colony,</span>
+            <span>Pin-500085</span>
+        </div>
+        <div style="line-height: 30px;" id="tod">
+            <div class="footer-title"> Contact Me</div>
+            <span>For more details Mail to <span class="bi bi-envelope-at"> <a href="https://mail.google.com/mail/?view=cm&fs=1&to=vsbshankar786@gmail.com">vsbshankar786@gmail.com</a></span> </span>
+            <span>You can call me : <span class="bi bi-telephone"><a href="tel:7981912785"> 7981912785</a></span></span> 
+        </div>
+    </footer>
+    <script>
+        function GetCurrentTime(){
+            var now = new Date();
+            var time = now.toLocaleTimeString().toUpperCase();
+            document.getElementById("clock").innerHTML = time;
+            var hrs = now.getHours();
+            var greeting = document.getElementById("ss");
+                if(hrs>=0 && hrs<=12){
+                    ss.innerHTML = "<span class='bi bi-brightness-alt-high'></span> Good Morning !!";
+                    
+    
+                } else if(hrs>=12 && hrs<=17) {
+                    ss.innerHTML = "<span class='bi bi-brightness-high'></span> Good Afternoon !";
+                   
+             
+                } else if(hrs>17 && hrs<=23) {
+                    ss.innerHTML = "<span class='bi bi-sunset'></span> Good Evening";
+                    
+             
+                }
+        }
+        function bodyload(){
+            setInterval(GetCurrentTime, 1000);
+        }
+    </script>
+</body>
+</html>
